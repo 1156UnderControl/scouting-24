@@ -4,10 +4,11 @@ This is the #1156 Under Control scouting system for the 2024 FRC's CRESCENDO sea
 
 ## Running the project
 
-Clone the source code and use the npm script for running:
+Clone the source code and use npm for installing the dependencies and running:
 
 ```bash
 git clone https://github.com/1156UnderControl/scouting-24.git
 cd scouting-24
+npm install
 npm run dev
 ```
