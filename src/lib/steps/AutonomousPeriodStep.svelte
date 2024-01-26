@@ -2,6 +2,7 @@
 	export let autoLeftZone = false;
 	export let autoAmpNotes = 0;
 	export let autoSpeakerNotes = 0;
+	export let autoTrapNotes = 0;
 	
 	import { Step } from '@skeletonlabs/skeleton';
 
@@ -13,8 +14,10 @@
 	<svelte:fragment slot="header">
 		Autonomous period
 	</svelte:fragment>
-	<Switch bind:checked={autoLeftZone} label="Robot left starting area completely" />
 	<section>
+		<div class="grid justify-items-center pb-5 pt-5">
+			<Switch bind:checked={autoLeftZone} label="Robot left starting area completely" />
+		</div>
 		<h3 class="h3">Notes:</h3>
 		<div class="grid grid-cols-2 justify-items-center gap-2 py-2">
 			<div>
@@ -24,6 +27,12 @@
 			<div>
 				<p class="pb-2">🔊 Speaker:</p>
 				<NumberInput bind:value={autoSpeakerNotes} min={0} max={7} />
+			</div>
+		</div>
+		<div class="grid justify-items-center py-2">
+			<div>
+				<p class="pb-2">🕸️ Trap:</p>
+				<NumberInput bind:value={autoTrapNotes} min={0} max={3} />
 			</div>
 		</div>
 	</section>

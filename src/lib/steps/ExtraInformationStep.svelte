@@ -2,9 +2,11 @@
 	export let rating: number = 5;
 	export let playedAsDefense = false;
 	export let robotFailed = false;
+	export let comments = "";
 
 	import Rating from '$lib/components/Rating.svelte';
 	import Switch from '$lib/components/Switch.svelte';
+	import TextInputField from '$lib/components/TextInputField.svelte';
 	import { Step } from '@skeletonlabs/skeleton';
 </script>
 
@@ -17,5 +19,6 @@
 		<Switch bind:checked={playedAsDefense} label="Played as defense?" />
 		<!--se jogou defesa mostrar o componente de rating-->
 		<Switch bind:checked={robotFailed} label="Robot failed?" />
+		<TextInputField bind:text={comments} placeholder="Commments"/> 
 	</section>
 </Step>
