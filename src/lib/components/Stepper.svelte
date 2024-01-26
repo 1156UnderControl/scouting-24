@@ -4,6 +4,7 @@
 	import MatchSelectionStep from "$lib/steps/MatchSelectionStep.svelte";
 	import AutonomousPeriodStep from "$lib/steps/AutonomousPeriodStep.svelte";
 	import TeleoperatedPeriodStep from "$lib/steps/TeleoperatedPeriodStep.svelte";
+	import EndgameStep from '$lib/steps/EndgameStep.svelte';
 	import ExtraInformationStep from "$lib/steps/ExtraInformationStep.svelte";
 	
 	// Match selection step
@@ -24,6 +25,7 @@
 <Stepper on:complete={onCompleteHandler} stepTerm="">
 	<MatchSelectionStep bind:tournamentLevel bind:matchNumber bind:teamStation />
 	<AutonomousPeriodStep bind:autoLeftZone bind:autoAmpNotes bind:autoSpeakerNotes />
-	<TeleoperatedPeriodStep />
-	<ExtraInformationStep />
+	<TeleoperatedPeriodStep/>
+	<EndgameStep/>
+	<ExtraInformationStep/>
 </Stepper>
