@@ -1,5 +1,4 @@
 <script lang="ts">
-
     import { Step } from '@skeletonlabs/skeleton';
 
 </script>
@@ -8,5 +7,4 @@
 	<svelte:fragment slot="header">
 		Endgame
 	</svelte:fragment>
-
 </Step>
