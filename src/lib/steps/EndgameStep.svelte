@@ -1,4 +1,5 @@
 <script lang="ts">
+    export let park = false;
     export let failedClimb = false;
     export let climbed = false;
     
@@ -12,9 +13,14 @@
 	<svelte:fragment slot="header">
 		Endgame
 	</svelte:fragment>
-    <section class="grid justify-items-center">
+    <section class="grid justify-items-center gap-3">
         <div>
-            <Switch bind:checked={climbed} label="Climbed:?" /> <!--adicionar região do climb-->
+            <Switch bind:checked={park} label="Parked?" />
+        </div>
+        <div>
+            <Switch bind:checked={climbed} label="Climbed?" /> <!--adicionar região do climb-->
+        </div>
+        <div>
             <Switch bind:checked={failedClimb} label="Failed climb?" />
         </div>
         <!--adicionar end position (stage)-->

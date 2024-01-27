@@ -4,7 +4,7 @@
 	import { RadioGroup, RadioItem } from '@skeletonlabs/skeleton';
 </script>
 
-<div class="inline-flex justify-center w-full gap-2">
+<div class="inline-flex justify-center w-full">
 	<RadioGroup>
 		<RadioItem bind:group={teamStation} name="justify" value={"Blue1"}>Blue 1</RadioItem>
 		<RadioItem bind:group={teamStation} name="justify" value={"Blue2"}>Blue 2</RadioItem>
