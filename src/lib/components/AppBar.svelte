@@ -1,5 +1,10 @@
 <script>
-	import {AppBar, LightSwitch} from '@skeletonlabs/skeleton';
+	import { AppBar, LightSwitch } from '@skeletonlabs/skeleton';
+	import SignInButton from 'clerk-sveltekit/client/SignInButton.svelte';
+	import SignUpButton from 'clerk-sveltekit/client/SignUpButton.svelte';
+	import SignedIn from 'clerk-sveltekit/client/SignedIn.svelte';
+	import SignedOut from 'clerk-sveltekit/client/SignedOut.svelte';
+	import UserButton from 'clerk-sveltekit/client/UserButton.svelte';
 
 	import logo from "$lib/assets/logo.png";
 </script>
@@ -10,6 +15,17 @@
 			<img width=42 height=42 alt="1156 logo" src={logo}/>
 		</svelte:fragment>
 		<p class="text-black dark:text-white">2024 CRESCENDO</p>
-		<svelte:fragment slot="trail"><LightSwitch/></svelte:fragment>
+		<svelte:fragment slot="trail">
+      <div class="inline-flex gap-4">
+        <LightSwitch/>
+        <SignedIn>
+          <UserButton afterSignOutUrl="/" />
+        </SignedIn>
+        <SignedOut>
+          <SignInButton mode="modal" />
+          <SignUpButton mode="modal" />
+        </SignedOut>
+      </div>
+    </svelte:fragment>
 	</AppBar>
 </div>
