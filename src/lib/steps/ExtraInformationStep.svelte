@@ -2,9 +2,11 @@
 	export let playedAsDefense = false;
 	export let driverSkills = 0;
 	export let robotFailed = false;
+	export let comments = "";
 
 	import Rating from '$lib/components/Rating.svelte';
 	import Switch from '$lib/components/Switch.svelte';
+	import TextInputField from '$lib/components/TextInputField.svelte';
 	import { Step } from '@skeletonlabs/skeleton';
 
   const handlePlayedAsDefenseChange = () => {
@@ -22,5 +24,6 @@
       <Rating bind:rating={driverSkills} label="Driver Skills" />
     {/if}
 		<Switch bind:checked={robotFailed} label="Robot failed?" />
+		<TextInputField bind:text={comments} placeholder="Commments"/> 
 	</section>
 </Step>

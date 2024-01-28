@@ -13,8 +13,10 @@
 	<svelte:fragment slot="header">
 		Autonomous period
 	</svelte:fragment>
-	<Switch bind:checked={autoLeftZone} label="Robot left starting area completely" />
 	<section>
+		<div class="grid justify-items-center pb-5 pt-5">
+			<Switch bind:checked={autoLeftZone} label="Robot left starting area completely" />
+		</div>
 		<h3 class="h3">Notes:</h3>
 		<div class="grid grid-cols-2 justify-items-center gap-2 py-2">
 			<div>
