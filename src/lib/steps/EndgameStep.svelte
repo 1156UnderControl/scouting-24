@@ -7,16 +7,9 @@
 
   import Switch from '$lib/components/Switch.svelte';
 
-  function handleRobotParkedChange() {
-    if (robotParked) {
-      attemptedClimbing = false;
-      failedClimbing = false;
-    }
-  }
-
   function handleAttemptedClimbingChange() {
-    if (attemptedClimbing) {
-      robotParked = false;
+    if (!attemptedClimbing) {
+      failedClimbing = false;
     }
   }
 </script>
@@ -27,7 +20,7 @@
   </svelte:fragment>
   <section class="grid justify-items-left gap-3">
     <div>
-      <Switch bind:checked={robotParked} disabled={attemptedClimbing} onChange={handleRobotParkedChange} label="Robot has parked on stage area" />
+      <Switch bind:checked={robotParked} label="Robot has parked on stage area" />
     </div>
     {#if !robotParked}
       <div>
