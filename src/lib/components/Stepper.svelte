@@ -34,11 +34,12 @@
 
 	}
 </script>
-
-<Stepper on:complete={onCompleteHandler} stepTerm="">
-	<MatchSelectionStep bind:tournamentLevel bind:matchNumber bind:teamStation />
-	<AutonomousPeriodStep bind:autoLeftZone bind:autoAmpNotes bind:autoSpeakerNotes />
-	<TeleoperatedPeriodStep bind:teleopCoopertition bind:teleopAmpNotes bind:teleopSpeakerNotes />
-	<EndgameStep/>
-	<ExtraInformationStep bind:playedAsDefense bind:driverSkills bind:robotFailed />
-</Stepper>
+<div class="max-w-xl">
+  <Stepper on:complete={onCompleteHandler} stepTerm="">
+    <MatchSelectionStep bind:tournamentLevel bind:matchNumber bind:teamStation />
+    <AutonomousPeriodStep bind:autoLeftZone bind:autoAmpNotes bind:autoSpeakerNotes />
+    <TeleoperatedPeriodStep bind:teleopCoopertition bind:teleopAmpNotes bind:teleopSpeakerNotes />
+    <EndgameStep/>
+    <ExtraInformationStep bind:playedAsDefense bind:driverSkills bind:robotFailed />
+  </Stepper>
+</div>
