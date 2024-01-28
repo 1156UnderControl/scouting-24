@@ -2,6 +2,7 @@
 	export let teleopCoopertition = false;
 	export let teleopAmpNotes = 0;
 	export let teleopSpeakerNotes = 0;
+  export let teleopTrapNotes = 0;
 	export let teleopAmplifiedSpeakerNotes = 0;
 	export let teleopNotesFromGround = 0;
 	export let teleopNotesFromSource = 0;
@@ -18,7 +19,7 @@
 	</svelte:fragment>
 	<section>
 	  <Switch bind:checked={teleopCoopertition} label="Coopertition button pressed" />
-		<h3 class="h3">Note picked up from:</h3>
+		<h3 class="h3">Notes picked from:</h3>
 		<div class="grid grid-cols-2 justify-items-center gap-2 py-2 pb-5">
 			<div>
 				<p class="pb-2">Ground:</p>
