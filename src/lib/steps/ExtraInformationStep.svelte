@@ -1,6 +1,6 @@
 <script lang="ts">
-	export let rating: number = 5;
 	export let playedAsDefense = false;
+	export let driverSkills = 0;
 	export let robotFailed = false;
 	export let comments = "";
 
@@ -8,6 +8,10 @@
 	import Switch from '$lib/components/Switch.svelte';
 	import TextInputField from '$lib/components/TextInputField.svelte';
 	import { Step } from '@skeletonlabs/skeleton';
+
+  const handlePlayedAsDefenseChange = () => {
+    driverSkills = playedAsDefense ? 3 : 0;
+  }
 </script>
 
 <Step>
@@ -15,9 +19,10 @@
 		Extra information
 	</svelte:fragment>
 	<section class="grid justify-items-center gap-5">
-		<Rating bind:rating label="Driver Skills" />
-		<Switch bind:checked={playedAsDefense} label="Played as defense?" />
-		<!--se jogou defesa mostrar o componente de rating-->
+    <Switch bind:checked={playedAsDefense} onChange={handlePlayedAsDefenseChange} label="Played as defense?" />
+    {#if playedAsDefense}
+      <Rating bind:rating={driverSkills} label="Driver Skills" />
+    {/if}
 		<Switch bind:checked={robotFailed} label="Robot failed?" />
 		<TextInputField bind:text={comments} placeholder="Commments"/> 
 	</section>
