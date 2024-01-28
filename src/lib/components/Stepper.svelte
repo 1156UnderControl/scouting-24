@@ -24,6 +24,15 @@
 	let teleopCoopertition = false;
 	let teleopAmpNotes = 0;
 	let teleopSpeakerNotes = 0;
+  let teleopTrapNotes = 0;
+	let teleopAmplifiedSpeakerNotes = 0;
+	let teleopNotesFromGround = 0;
+	let teleopNotesFromSource = 0;
+
+  // Endgame step
+  let robotParked = false;
+  let attemptedClimbing = false;
+  let failedClimbing = false;
 
   // Extra information step
 	let playedAsDefense = false;
@@ -38,8 +47,8 @@
   <Stepper on:complete={onCompleteHandler} stepTerm="">
     <MatchSelectionStep bind:tournamentLevel bind:matchNumber bind:teamStation />
     <AutonomousPeriodStep bind:autoLeftZone bind:autoAmpNotes bind:autoSpeakerNotes />
-    <TeleoperatedPeriodStep bind:teleopCoopertition bind:teleopAmpNotes bind:teleopSpeakerNotes />
-    <EndgameStep/>
+    <TeleoperatedPeriodStep bind:teleopCoopertition bind:teleopAmpNotes bind:teleopSpeakerNotes bind:teleopTrapNotes bind:teleopAmplifiedSpeakerNotes bind:teleopNotesFromGround bind:teleopNotesFromSource />
+    <EndgameStep bind:robotParked bind:attemptedClimbing bind:failedClimbing />
     <ExtraInformationStep bind:playedAsDefense bind:driverSkills bind:robotFailed />
   </Stepper>
 </div>
