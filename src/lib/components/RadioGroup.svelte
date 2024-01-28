@@ -3,12 +3,12 @@
 		value: string;
 		label: string;
 	};
-	
+
 	export let options: Option[];
 	export let legend: string;
 	export let userSelected = options[0]?.value;
 
-	import { ListBox, ListBoxItem } from '@skeletonlabs/skeleton';	
+	import { ListBox, ListBoxItem } from '@skeletonlabs/skeleton';
 </script>
 
 {#if legend}

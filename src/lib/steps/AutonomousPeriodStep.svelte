@@ -5,14 +5,12 @@
 
 	import { Step } from '@skeletonlabs/skeleton';
 
-	import NumberInput from "$lib/components/NumberInput.svelte";
-	import Switch from "$lib/components/Switch.svelte";
+	import NumberInput from '$lib/components/NumberInput.svelte';
+	import Switch from '$lib/components/Switch.svelte';
 </script>
 
 <Step>
-	<svelte:fragment slot="header">
-		Autonomous period
-	</svelte:fragment>
+	<svelte:fragment slot="header">Autonomous period</svelte:fragment>
 	<section>
 		<div class="grid justify-items-center">
 			<Switch bind:checked={autoLeftZone} label="Robot left starting area completely" />
