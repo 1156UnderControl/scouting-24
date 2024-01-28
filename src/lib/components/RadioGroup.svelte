@@ -11,12 +11,17 @@
 	import { RadioGroup, RadioItem } from '@skeletonlabs/skeleton';
 </script>
 
-{#if legend}
+<div class="flex items-center gap-2">
+	{#if legend}
 	<p>{legend}</p>
-{/if}
+	{/if}
 
-<RadioGroup>
-	{#each options as { value, label }}
-		<RadioItem bind:group={userSelected} name="justify" value={value}>{label}</RadioItem>
-	{/each}
-</RadioGroup>
+	<RadioGroup>
+		{#each options as { value, label }}
+			<RadioItem bind:group={userSelected} name="justify" value={value}>{label}</RadioItem>
+		{/each}
+	</RadioGroup>
+</div>
+
+
+

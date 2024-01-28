@@ -41,7 +41,7 @@
 			</div>
 			{#if attemptedClimbing}
 				<div class="pb-2">
-					<RadioGroup legend="Climb region" options={climbOptions} userSelected={userSelectedClimbStage}/>
+					<RadioGroup legend="Climb Region" options={climbOptions} userSelected={userSelectedClimbStage}/>
 				</div>
 				<div>
 					<Switch bind:checked={failedClimbing} label="Robot has failed climbing" />
