@@ -20,11 +20,11 @@
 	</svelte:fragment>
 	<section class="grid justify-items-center gap-4">
     <!-- TODO: align checkboxes for better UX -->
+    <Switch bind:checked={robotFailed} label="Robot failed?" />
     <Switch bind:checked={playedAsDefense} onChange={handlePlayedAsDefenseChange} label="Played as defense?" />
     {#if playedAsDefense}
       <Rating bind:rating={driverSkills} label="Driver Skills" />
     {/if}
-		<Switch bind:checked={robotFailed} label="Robot failed?" />
 		<TextInputField bind:text={comments} placeholder="Commments"/>
 	</section>
 </Step>
