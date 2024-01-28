@@ -8,15 +8,15 @@
 	export let legend: string;
 	export let userSelected = options[0]?.value;
 
-	import { ListBox, ListBoxItem } from '@skeletonlabs/skeleton';
+	import { RadioGroup, RadioItem } from '@skeletonlabs/skeleton';
 </script>
 
 {#if legend}
 	<p>{legend}</p>
 {/if}
 
-<ListBox>
+<RadioGroup>
 	{#each options as { value, label }}
-		<ListBoxItem bind:group={userSelected} name="medium" value>{label}</ListBoxItem>
+		<RadioItem bind:group={userSelected} name="justify" value={value}>{label}</RadioItem>
 	{/each}
-</ListBox>
+</RadioGroup>

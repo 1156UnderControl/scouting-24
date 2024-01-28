@@ -16,8 +16,7 @@
 
 <Step>
 	<svelte:fragment slot="header">Extra information</svelte:fragment>
-	<section class="grid justify-items-center gap-4">
-		<!-- TODO: align checkboxes for better UX -->
+	<section class="justify-items-left grid gap-3">
 		<Switch bind:checked={robotFailed} label="Robot failed?" />
 		<Switch
 			bind:checked={playedAsDefense}
