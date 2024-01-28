@@ -1,29 +1,45 @@
 <script lang="ts">
-    export let park = false;
-    export let failedClimb = false;
-    export let climbed = false;
-    
-    import RadioGroup from '$lib/components/RadioGroup.svelte';
-    import Switch from '$lib/components/Switch.svelte';
-    import { Step } from '@skeletonlabs/skeleton';
+  export let robotParked = false;
+  export let attemptedClimbing = false;
+  export let failedClimbing = false;
 
+  import { Step } from '@skeletonlabs/skeleton';
+
+  import Switch from '$lib/components/Switch.svelte';
+
+  function handleRobotParkedChange() {
+    if (robotParked) {
+      attemptedClimbing = false;
+      failedClimbing = false;
+    }
+  }
+
+  function handleAttemptedClimbingChange() {
+    if (attemptedClimbing) {
+      robotParked = false;
+    }
+  }
 </script>
 
 <Step>
-	<svelte:fragment slot="header">
-		Endgame
-	</svelte:fragment>
-    <section class="grid justify-items-center gap-3">
+  <svelte:fragment slot="header">
+    Endgame
+  </svelte:fragment>
+  <section class="grid justify-items-left gap-3">
+    <div>
+      <Switch bind:checked={robotParked} disabled={attemptedClimbing} onChange={handleRobotParkedChange} label="Robot has parked on stage area" />
+    </div>
+    {#if !robotParked}
+      <div>
+        <Switch bind:checked={attemptedClimbing} onChange={handleAttemptedClimbingChange} label="Robot has attempted to climb" />
+        <!--TODO: adicionar região do climb-->
+      </div>
+      {#if attemptedClimbing}
         <div>
-            <Switch bind:checked={park} label="Parked?" />
+          <Switch bind:checked={failedClimbing} label="Robot has failed climbing" />
         </div>
-        <div>
-            <Switch bind:checked={climbed} label="Climbed?" /> <!--adicionar região do climb-->
-        </div>
-        <div>
-            <Switch bind:checked={failedClimb} label="Failed climb?" />
-        </div>
-        <!--adicionar end position (stage)-->
-    </section>
-    
+      {/if}
+    {/if}
+    <!--TODO: adicionar end position (stage)-->
+  </section>
 </Step>
