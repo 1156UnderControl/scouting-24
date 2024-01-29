@@ -2,27 +2,28 @@
 	export let robotParked = false;
 	export let attemptedClimbing = false;
 	export let failedClimbing = false;
-
+	
 	let climbOptions = [
 		{value: "Left", label: "Left"},
-		{value: "Midleft", label: "ML"},
-		{value: "Mid", label: "Mid"},
-		{value: "Midright", label: "MR"},
+		{value: "Center-Left", label: "Center-Left"},
+		{value: "Center", label: "Center"},
+		{value: "Center-Right", label: "Center-Right"},
 		{value: "Right", label: "Right"}
 	]
 
-	let userSelectedClimbStage = climbOptions[0]?.value;
+	export let userSelectedClimbStage = "Center";
 
 	import { Step } from '@skeletonlabs/skeleton';
+
 	import Switch from '$lib/components/Switch.svelte';
 	import RadioGroup from '$lib/components/RadioGroup.svelte';
 
 	function handleAttemptedClimbingChange() {
 		if (!attemptedClimbing) {
 			failedClimbing = false;
-		}
+			userSelectedClimbStage = "";
+		} 
 	}
-
 </script>
 
 <Step>

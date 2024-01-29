@@ -13,7 +13,7 @@
 
 <div class="flex items-center gap-2">
 	{#if legend}
-	<p>{legend}</p>
+		<p>{legend}</p>
 	{/if}
 
 	<RadioGroup>
