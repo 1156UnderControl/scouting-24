@@ -1,8 +1,21 @@
 <script lang="ts">
+	import RadioGroup from '$lib/components/RadioGroup.svelte';
+
 	export let playedAsDefense = false;
 	export let driverSkills = 0;
 	export let robotFailed = false;
-	export let comments = '';
+	export let comments = "";
+	export let droppedNotes = false;
+	export let speedRatingSelected = "3";
+
+	let speedOptions = [
+		{value: "1", label: "1"},
+		{value: "2", label: "2"},
+		{value: "3", label: "3"},
+		{value: "4", label: "4"},
+		{value: "5", label: "5"}
+	]
+
 
 	import Rating from '$lib/components/Rating.svelte';
 	import Switch from '$lib/components/Switch.svelte';
@@ -16,8 +29,7 @@
 
 <Step>
 	<svelte:fragment slot="header">Extra information</svelte:fragment>
-	<section class="grid justify-items-center gap-4">
-		<!-- TODO: align checkboxes for better UX -->
+	<section class="justify-items-left grid gap-3">
 		<Switch bind:checked={robotFailed} label="Robot failed?" />
 		<Switch
 			bind:checked={playedAsDefense}
@@ -27,6 +39,8 @@
 		{#if playedAsDefense}
 			<Rating bind:rating={driverSkills} label="Driver Skills" />
 		{/if}
+		<Switch bind:checked={droppedNotes} label="Dropped more than 2 notes?" />
+		<RadioGroup legend="Speed Rating" options={speedOptions} userSelected={speedRatingSelected} />
 		<TextInputField bind:text={comments} placeholder="Commments" />
 	</section>
 </Step>

@@ -2,14 +2,27 @@
 	export let robotParked = false;
 	export let attemptedClimbing = false;
 	export let failedClimbing = false;
+	export let userSelectedClimbStage = "Center";
+
+	let climbOptions = [
+		{value: "Left", label: "Left"},
+		{value: "Center-Left", label: "Center-Left"},
+		{value: "Center", label: "Center"},
+		{value: "Center-Right", label: "Center-Right"},
+		{value: "Right", label: "Right"}
+	]
 
 	import { Step } from '@skeletonlabs/skeleton';
 
 	import Switch from '$lib/components/Switch.svelte';
+	import RadioGroup from '$lib/components/RadioGroup.svelte';
 
 	function handleAttemptedClimbingChange() {
 		if (!attemptedClimbing) {
 			failedClimbing = false;
+			userSelectedClimbStage = "";
+		} else {
+			userSelectedClimbStage = "Center";
 		}
 	}
 </script>
@@ -27,9 +40,11 @@
 					onChange={handleAttemptedClimbingChange}
 					label="Robot has attempted to climb"
 				/>
-				<!--TODO: adicionar região do climb-->
 			</div>
 			{#if attemptedClimbing}
+				<div class="pb-2">
+					<RadioGroup legend="Climb Region" options={climbOptions} userSelected={userSelectedClimbStage}/>
+				</div>
 				<div>
 					<Switch bind:checked={failedClimbing} label="Robot has failed climbing" />
 				</div>
