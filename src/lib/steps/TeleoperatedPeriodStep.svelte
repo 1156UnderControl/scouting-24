@@ -1,4 +1,5 @@
 <script lang="ts">
+	export let teleopCoopertition = false;
 	export let teleopAmpNotes = 0;
 	export let teleopSpeakerNotes = 0;
 	export let teleopTrapNotes = 0;
@@ -9,11 +10,13 @@
 	import { Step } from '@skeletonlabs/skeleton';
 
 	import NumberInput from '$lib/components/NumberInput.svelte';
+	import Switch from '$lib/components/Switch.svelte';
 </script>
 
 <Step>
 	<svelte:fragment slot="header">Teleoperated period</svelte:fragment>
 	<section>
+		<Switch bind:checked={teleopCoopertition} label="Coopertition button pressed" />
 		<h3 class="h3">Notes picked from:</h3>
 		<div class="grid grid-cols-2 justify-items-center gap-2 py-2 pb-5">
 			<div>
