@@ -12,6 +12,7 @@
 		<RadioItem bind:group={tournamentLevel} name="justify" value={'Qualification'}>Quali</RadioItem>
 		<RadioItem bind:group={tournamentLevel} name="justify" value={'Playoff'}>Play-off</RadioItem>
 	</RadioGroup>
-
-	<NumberInput bind:value={matchNumber} min={1} max={150} />
+	<div class="dark:text-black">
+		<NumberInput bind:value={matchNumber} min={1} max={150} />
+	</div>
 </div>
