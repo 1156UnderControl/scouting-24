@@ -1,6 +1,6 @@
 <script lang="ts">
-	export let userName: string;
-	export let userEmail: string;
+	//export let userName: string;
+	//export let userEmail: string;
 
 	import { Stepper } from '@skeletonlabs/skeleton';
 
@@ -22,15 +22,13 @@
 
 	// Teleoperated period step
 	let teleopCoopertition = false;
+	let canPickupNotesFromGround = false;
 	let teleopAmpNotes = 0;
 	let teleopSpeakerNotes = 0;
-	let teleopTrapNotes = 0;
-	let teleopAmplifiedSpeakerNotes = 0;
-	let teleopNotesFromGround = false;
-	let teleopNotesFromSource = false;
 
 	// Endgame step
 	let robotParked = false;
+	let trapNote = false;
 	let attemptedClimbing = false;
 	let failedClimbing = false;
 
@@ -39,7 +37,9 @@
 	let driverSkills = 0;
 	let robotFailed = false;
 
-	async function onCompleteHandler(e: Event): Promise<void> {}
+	async function onCompleteHandler(e: Event): Promise<void> {
+		console.log("teste");
+	}
 </script>
 
 <div class="max-w-xl">
@@ -48,14 +48,11 @@
 		<AutonomousPeriodStep bind:autoLeftZone bind:autoAmpNotes bind:autoSpeakerNotes />
 		<TeleoperatedPeriodStep
 			bind:teleopCoopertition
+			bind:canPickupNotesFromGround
 			bind:teleopAmpNotes
 			bind:teleopSpeakerNotes
-			bind:teleopTrapNotes
-			bind:teleopAmplifiedSpeakerNotes
-			bind:teleopNotesFromGround
-			bind:teleopNotesFromSource
 		/>
-		<EndgameStep bind:robotParked bind:attemptedClimbing bind:failedClimbing />
+		<EndgameStep bind:robotParked bind:trapNote bind:attemptedClimbing bind:failedClimbing />
 		<ExtraInformationStep bind:playedAsDefense bind:driverSkills bind:robotFailed />
 	</Stepper>
 </div>

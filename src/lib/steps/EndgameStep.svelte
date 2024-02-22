@@ -1,4 +1,5 @@
 <script lang="ts">
+	export let trapNote = false;
 	export let robotParked = false;
 	export let attemptedClimbing = false;
 	export let failedClimbing = false;
@@ -6,9 +7,7 @@
 
 	let climbOptions = [
 		{value: "Left", label: "Left"},
-		{value: "Center-Left", label: "Center-Left"},
 		{value: "Center", label: "Center"},
-		{value: "Center-Right", label: "Center-Right"},
 		{value: "Right", label: "Right"}
 	]
 
@@ -32,6 +31,9 @@
 	<section class="justify-items-left grid gap-3">
 		<div>
 			<Switch bind:checked={robotParked} label="Robot has parked on stage area" />
+		</div>
+		<div>
+			<Switch bind:checked={trapNote} label="Note in trap?"/>
 		</div>
 		{#if !robotParked}
 			<div>

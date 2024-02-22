@@ -1,12 +1,11 @@
 <script lang="ts">
+	import {foulsStore} from '$lib/store.ts';
+	
 	export let teleopCoopertition = false;
+	export let canPickupNotesFromGround = false;
 	export let teleopAmpNotes = 0;
 	export let teleopSpeakerNotes = 0;
-	export let teleopTrapNotes = 0;
-	export let teleopAmplifiedSpeakerNotes = 0;
-	export let teleopNotesFromGround = false;
-	export let teleopNotesFromSource = false;
-
+	
 	import { Step } from '@skeletonlabs/skeleton';
 
 	import NumberInput from '$lib/components/NumberInput.svelte';
@@ -16,14 +15,11 @@
 <Step>
 	<svelte:fragment slot="header">Teleoperated period</svelte:fragment>
 	<section>
-		<Switch bind:checked={teleopCoopertition} label="Coopertition button pressed" />
-		<h3 class="h3">Notes picked from:</h3>
-		<div class="justify-items-left grid grid-cols-2 gap-2 py-2 pb-5">
-			<Switch bind:checked={teleopNotesFromGround} label="Ground" />
-			<Switch bind:checked={teleopNotesFromSource} label="Source" />
+		<div class="justify-items-left grid gap-3">
+			<Switch bind:checked={teleopCoopertition} label="Coopertition button pressed" />
+			<Switch bind:checked={canPickupNotesFromGround} label="Can pickup Notes from ground" />
 		</div>
-
-		<h3 class="h3">Scored notes:</h3>
+		<h3 class="h3 pb-2 pt-2">Scored notes:</h3>
 		<div class="grid grid-cols-2 justify-items-center gap-2 py-2">
 			<div>
 				<p class="pb-2">🎚️ Amp:</p>
@@ -33,14 +29,8 @@
 				<p class="pb-2">🔊 Speaker:</p>
 				<NumberInput bind:value={teleopSpeakerNotes} min={0} max={15} />
 			</div>
-			<div>
-				<p class="pb-2">🕸️ Trap:</p>
-				<NumberInput bind:value={teleopTrapNotes} min={0} max={3} />
-			</div>
-			<div>
-				<p class="pb-2">🔊≋ Amplified notes:</p>
-				<NumberInput bind:value={teleopAmplifiedSpeakerNotes} min={0} max={10} />
-			</div>
 		</div>
+		<h3 class="h3 pb-2 pt-2">Fouls:</h3>
+		<NumberInput bind:value={$foulsStore} min={0} max={5} />
 	</section>
 </Step>
