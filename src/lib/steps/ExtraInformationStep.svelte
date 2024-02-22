@@ -20,7 +20,6 @@
 	import NumberInput from '$lib/components/NumberInput.svelte';
 	import Rating from '$lib/components/Rating.svelte';
 	import Switch from '$lib/components/Switch.svelte';
-	import TextInputField from '$lib/components/TextInputField.svelte';
 	import { Step } from '@skeletonlabs/skeleton';
 
 	const handlePlayedAsDefenseChange = () => {
@@ -46,6 +45,6 @@
 		{/if}
 		<Switch bind:checked={droppedNotes} label="Dropped more than 2 notes?" />
 		<RadioGroup legend="Speed Rating" options={speedOptions} userSelected={speedRatingSelected} />
-		<TextInputField bind:text={comments} placeholder="Commments" />
+		<textarea bind:value={comments} class="textarea" rows="4" placeholder="Enter some long form content." />
 	</section>
 </Step>
