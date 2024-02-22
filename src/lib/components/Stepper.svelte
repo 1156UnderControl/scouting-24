@@ -26,8 +26,8 @@
 	let teleopSpeakerNotes = 0;
 	let teleopTrapNotes = 0;
 	let teleopAmplifiedSpeakerNotes = 0;
-	let teleopNotesFromGround = 0;
-	let teleopNotesFromSource = 0;
+	let teleopNotesFromGround = false;
+	let teleopNotesFromSource = false;
 
 	// Endgame step
 	let robotParked = false;

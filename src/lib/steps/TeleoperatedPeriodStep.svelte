@@ -4,8 +4,8 @@
 	export let teleopSpeakerNotes = 0;
 	export let teleopTrapNotes = 0;
 	export let teleopAmplifiedSpeakerNotes = 0;
-	export let teleopNotesFromGround = 0;
-	export let teleopNotesFromSource = 0;
+	export let teleopNotesFromGround = false;
+	export let teleopNotesFromSource = false;
 
 	import { Step } from '@skeletonlabs/skeleton';
 
@@ -18,15 +18,9 @@
 	<section>
 		<Switch bind:checked={teleopCoopertition} label="Coopertition button pressed" />
 		<h3 class="h3">Notes picked from:</h3>
-		<div class="grid grid-cols-2 justify-items-center gap-2 py-2 pb-5">
-			<div>
-				<p class="pb-2">Ground:</p>
-				<NumberInput bind:value={teleopNotesFromGround} min={0} max={15} />
-			</div>
-			<div>
-				<p class="pb-2">Source:</p>
-				<NumberInput bind:value={teleopNotesFromSource} min={0} max={15} />
-			</div>
+		<div class="justify-items-left grid grid-cols-2 gap-2 py-2 pb-5">
+			<Switch bind:checked={teleopNotesFromGround} label="Ground" />
+			<Switch bind:checked={teleopNotesFromSource} label="Source" />
 		</div>
 
 		<h3 class="h3">Scored notes:</h3>
