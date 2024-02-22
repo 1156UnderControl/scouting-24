@@ -1,12 +1,11 @@
 <script lang="ts">
-	import {foulsStore} from '$lib/store.ts';
-	
 	export let playedAsDefense = false;
 	export let driverSkills = 0;
 	export let robotFailed = false;
 	export let comments = "";
 	export let droppedNotes = false;
 	export let speedRatingSelected = "3";
+	export let fouls = 0;
 
 	let speedOptions = [
 		{value: "1", label: "1"},
@@ -30,21 +29,21 @@
 <Step>
 	<svelte:fragment slot="header">Extra information</svelte:fragment>
 	<div class="flex justify-items-center alignitems-center gap-3">
-		<h3 class="h3 pb-2 pt-2">Fouls:</h3>
-		<NumberInput bind:value={$foulsStore} min={0} max={5} />
+		<h3 class="h3 px-2">Fouls:</h3>
+		<NumberInput bind:value={fouls} min={0} max={15} />
 	</div>
 	<section class="justify-items-left grid gap-3 ">
-		<Switch bind:checked={robotFailed} label="Robot failed?" />
+		<Switch bind:checked={robotFailed} label="Robot failed" />
 		<Switch
 			bind:checked={playedAsDefense}
 			onChange={handlePlayedAsDefenseChange}
-			label="Played as defense?"
+			label="Played as defense"
 		/>
 		{#if playedAsDefense}
 			<Rating bind:rating={driverSkills} label="Driver Skills" />
 		{/if}
-		<Switch bind:checked={droppedNotes} label="Dropped more than 2 notes?" />
+		<Switch bind:checked={droppedNotes} label="Dropped more than 2 notes" />
 		<RadioGroup legend="Speed Rating" options={speedOptions} userSelected={speedRatingSelected} />
-		<textarea bind:value={comments} class="textarea" rows="4" placeholder="Enter some long form content." />
+		<textarea bind:value={comments} class="textarea" rows="5" placeholder="Additional comments" />
 	</section>
 </Step>

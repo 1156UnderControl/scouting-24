@@ -25,6 +25,7 @@
 	let canPickupNotesFromGround = false;
 	let teleopAmpNotes = 0;
 	let teleopSpeakerNotes = 0;
+	let fouls = 0;
 
 	// Endgame step
 	let robotParked = false;
@@ -51,8 +52,9 @@
 			bind:canPickupNotesFromGround
 			bind:teleopAmpNotes
 			bind:teleopSpeakerNotes
+			bind:fouls
 		/>
 		<EndgameStep bind:robotParked bind:trapNote bind:attemptedClimbing bind:failedClimbing />
-		<ExtraInformationStep bind:playedAsDefense bind:driverSkills bind:robotFailed />
+		<ExtraInformationStep bind:playedAsDefense bind:driverSkills bind:robotFailed bind:fouls />
 	</Stepper>
 </div>

@@ -33,7 +33,7 @@
 			<Switch bind:checked={robotParked} label="Robot has parked on stage area" />
 		</div>
 		<div>
-			<Switch bind:checked={trapNote} label="Note in trap?"/>
+			<Switch bind:checked={trapNote} label="Note in trap"/>
 		</div>
 		{#if !robotParked}
 			<div>
