@@ -3,25 +3,25 @@
 	export let robotParked = false;
 	export let attemptedClimbing = false;
 	export let failedClimbing = false;
-	export let userSelectedClimbStage = "Center";
+	export let climbPosition = 'Center';
 
 	let climbOptions = [
-		{value: "Left", label: "Left"},
-		{value: "Center", label: "Center"},
-		{value: "Right", label: "Right"}
-	]
+		{ value: 'Left', label: 'Left' },
+		{ value: 'Center', label: 'Center' },
+		{ value: 'Right', label: 'Right' }
+	];
 
 	import { Step } from '@skeletonlabs/skeleton';
 
-	import Switch from '$lib/components/Switch.svelte';
 	import RadioGroup from '$lib/components/RadioGroup.svelte';
+	import Switch from '$lib/components/Switch.svelte';
 
 	function handleAttemptedClimbingChange() {
 		if (!attemptedClimbing) {
 			failedClimbing = false;
-			userSelectedClimbStage = "";
+			climbPosition = '';
 		} else {
-			userSelectedClimbStage = "Center";
+			climbPosition = 'Center';
 		}
 	}
 </script>
@@ -33,7 +33,7 @@
 			<Switch bind:checked={robotParked} label="Robot has parked on stage area" />
 		</div>
 		<div>
-			<Switch bind:checked={trapNote} label="Note in trap"/>
+			<Switch bind:checked={trapNote} label="Note in trap" />
 		</div>
 		{#if !robotParked}
 			<div>
@@ -45,7 +45,7 @@
 			</div>
 			{#if attemptedClimbing}
 				<div class="pb-2">
-					<RadioGroup legend="Climb Region" options={climbOptions} userSelected={userSelectedClimbStage}/>
+					<RadioGroup legend="Climb Region" options={climbOptions} userSelected={climbPosition} />
 				</div>
 				<div>
 					<Switch bind:checked={failedClimbing} label="Robot has failed climbing" />
