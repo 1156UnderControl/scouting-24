@@ -1,5 +1,5 @@
 <script lang="ts">
-	export let tournamentLevel: string = 'Qualification';
+	export let tournamentLevel: string = 'Quali';
 	export let matchNumber: number = 1;
 
 	import { RadioGroup, RadioItem } from '@skeletonlabs/skeleton';
