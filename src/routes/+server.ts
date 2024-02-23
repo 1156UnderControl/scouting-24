@@ -50,7 +50,7 @@ export async function POST({ request }) {
 		tournamentLevel,
 		matchNumber,
 		0, // TODO: TEAM NUMBER!
-		autoStartingPosition, // TODO: CONVERT TO NUMBER
+		autoStartingPosition,
 		+autoLeftZone,
 		autoAmpNotes,
 		autoSpeakerNotes,
@@ -59,7 +59,7 @@ export async function POST({ request }) {
 		teleopSpeakerNotes,
 		+robotParked,
 		+attemptedClimbing,
-		climbPosition, // TODO: CONVERT TO NUMBER
+		climbPosition,
 		+failedClimbing,
 		+trapNote,
 		comments,

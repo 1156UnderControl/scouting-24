@@ -52,6 +52,5 @@
 				</div>
 			{/if}
 		{/if}
-		<!--TODO: adicionar end position (stage)-->
 	</section>
 </Step>
