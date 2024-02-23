@@ -46,6 +46,7 @@ export async function POST({ request }) {
 
 	const sheet = await GoogleSheet.create(GOOGLE_SHEET_ID, GOOGLE_SHEET_WORKSHEET_TITLE);
 	sheet.addRow([
+		userName,
 		userEmail,
 		tournamentLevel,
 		matchNumber,
@@ -54,6 +55,7 @@ export async function POST({ request }) {
 		+autoLeftZone,
 		autoAmpNotes,
 		autoSpeakerNotes,
+		+teleopCoopertition,
 		+canPickupNotesFromGround,
 		teleopAmpNotes,
 		teleopSpeakerNotes,
@@ -62,10 +64,12 @@ export async function POST({ request }) {
 		climbPosition,
 		+failedClimbing,
 		+trapNote,
-		comments,
+		+droppedNotes,
 		fouls,
 		+playedAsDefense,
-		+robotFailed
+		+robotFailed,
+		+speedRatingSelected,
+		comments
 	]);
 
 	return json({});

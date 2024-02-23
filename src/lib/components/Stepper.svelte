@@ -44,7 +44,7 @@
 	let speedRatingSelected = '3';
 
 	async function onCompleteHandler(e: Event): Promise<void> {
-		await fetch('/', {
+		await fetch('/api/submit', {
 			method: 'POST',
 			headers: {
 				'content-type': 'application/json'
