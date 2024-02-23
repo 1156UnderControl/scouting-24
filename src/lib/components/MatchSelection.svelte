@@ -10,7 +10,7 @@
 <div class="inline-flex w-full justify-center gap-2">
 	<RadioGroup>
 		<RadioItem bind:group={tournamentLevel} name="justify" value={'Practice'}>Practice</RadioItem>
-		<RadioItem bind:group={tournamentLevel} name="justify" value={'Qualification'}>Quali</RadioItem>
+		<RadioItem bind:group={tournamentLevel} name="justify" value={'Quali'}>Quali</RadioItem>
 		<RadioItem bind:group={tournamentLevel} name="justify" value={'Playoff'}>Play-off</RadioItem>
 	</RadioGroup>
 	<div class="dark:text-black">
