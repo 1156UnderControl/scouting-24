@@ -11,7 +11,7 @@
 	import TeleoperatedPeriodStep from '$lib/steps/TeleoperatedPeriodStep.svelte';
 
 	// Match selection step
-	let tournamentLevel = 'Quali';
+	let tournamentLevel = 'Qual';
 	let matchNumber = 1;
 	let teamStation = 'Blue1';
 

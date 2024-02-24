@@ -7,11 +7,40 @@
 
 	import MatchSelection from '$lib/components/MatchSelection.svelte';
 	import TeamSelection from '$lib/components/TeamSelection.svelte';
+	import type { ScheduleResponse } from '$lib/models/FrcApi';
+
+	let schedule: ScheduleResponse[];
+	let currentMatchTeams: number[] = [];
+
+	$: currentMatchTeams =
+		(schedule &&
+			schedule[matchNumber - 1] && [
+				schedule[matchNumber - 1].red1,
+				schedule[matchNumber - 1].red2,
+				schedule[matchNumber - 1].red3,
+				schedule[matchNumber - 1].blue1,
+				schedule[matchNumber - 1].blue2,
+				schedule[matchNumber - 1].blue3
+			]) ||
+		[];
+
+	async function handleTournamentLevelChange() {
+		const response = await fetch('/api/schedule', {
+			method: 'POST',
+			headers: {
+				'content-type': 'application/json'
+			},
+			body: JSON.stringify({ tournamentLevel })
+		});
+
+		schedule = await response.json();
+	}
+
+	handleTournamentLevelChange();
 </script>
 
 <Step>
 	<svelte:fragment slot="header">Match selection</svelte:fragment>
-	<MatchSelection bind:tournamentLevel bind:matchNumber />
-	<TeamSelection bind:teamStation />
+	<MatchSelection bind:tournamentLevel bind:matchNumber onChange={handleTournamentLevelChange} />
+	<TeamSelection bind:teamStation teams={currentMatchTeams} />
 </Step>
-

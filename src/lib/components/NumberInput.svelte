@@ -12,7 +12,9 @@
 	}
 </script>
 
-<section class="bg-surface-200-700-token border-surface-400-500-token btn-group border-token dark:text-black">
+<section
+	class="bg-surface-200-700-token border-surface-400-500-token btn-group border-token dark:text-black"
+>
 	<button on:click={handleDecrease} type="button">-</button>
 	<input bind:value class="w-16 text-center" />
 	<button on:click={handleIncrease} type="button">+</button>
