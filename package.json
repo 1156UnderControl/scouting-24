@@ -35,7 +35,6 @@
 	"dependencies": {
 		"clerk-sveltekit": "^0.4.1",
 		"google-auth-library": "^9.6.3",
-		"google-spreadsheet": "^4.1.1",
-		"svelte-persisted-store": "^0.9.1"
+		"google-spreadsheet": "^4.1.1"
 	}
 }
