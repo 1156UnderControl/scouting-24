@@ -62,7 +62,7 @@
 	}
 
 	async function onCompleteHandler(e: Event): Promise<void> {
-		await fetch('/api/submit/2024/BRBR', {
+		await fetch('/scout/2024/BRBR', {
 			method: 'POST',
 			headers: {
 				'content-type': 'application/json'

@@ -6,6 +6,7 @@ const GOOGLE_SHEET_ID = '1keZJh84RyPS4qYCuoDuOkOW9f966MeIEhinkI9PssSs';
 
 export async function POST({ request, params }) {
 	const { eventAbbreviation } = params;
+
 	const {
 		userName,
 		userEmail,
