@@ -1,7 +1,8 @@
 <script lang="ts">
 	export let tournamentLevel: string = 'Qualification';
 	export let matchNumber: number = 1;
-	export let teamStation: string = 'Blue1';
+	export let teamStation: string = 'Red1';
+	export let teamNumber: number;
 
 	import { Step } from '@skeletonlabs/skeleton';
 
@@ -42,5 +43,5 @@
 <Step>
 	<svelte:fragment slot="header">Match selection</svelte:fragment>
 	<MatchSelection bind:tournamentLevel bind:matchNumber onChange={handleTournamentLevelChange} />
-	<TeamSelection bind:teamStation teams={currentMatchTeams} />
+	<TeamSelection bind:teamStation bind:teamNumber teams={currentMatchTeams} />
 </Step>

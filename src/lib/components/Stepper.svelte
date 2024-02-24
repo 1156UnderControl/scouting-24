@@ -3,7 +3,9 @@
 	export let userEmail: string;
 
 	import { Stepper } from '@skeletonlabs/skeleton';
+	import { get } from 'svelte/store';
 
+	import { settings } from '$lib/models/LocalStorage';
 	import AutonomousPeriodStep from '$lib/steps/AutonomousPeriodStep.svelte';
 	import EndgameStep from '$lib/steps/EndgameStep.svelte';
 	import ExtraInformationStep from '$lib/steps/ExtraInformationStep.svelte';
@@ -11,9 +13,8 @@
 	import TeleoperatedPeriodStep from '$lib/steps/TeleoperatedPeriodStep.svelte';
 
 	// Match selection step
-	let tournamentLevel = 'Qual';
-	let matchNumber = 1;
-	let teamStation = 'Blue1';
+	let { tournamentLevel, matchNumber, teamStation } = get(settings);
+	let teamNumber: number;
 
 	// Autonomous period step
 	let autoStartingPosition = 'amp';
@@ -37,11 +38,25 @@
 
 	// Extra information step
 	let playedAsDefense = false;
-	let driverSkills = 0;
 	let robotFailed = false;
 	let comments = '';
 	let droppedNotes = false;
 	let speedRatingSelected = '3';
+
+	function saveChoices() {
+		matchNumber += 1;
+		settings.update((_) => {
+			return {
+				tournamentLevel,
+				matchNumber,
+				teamStation
+			};
+		});
+	}
+
+	function reloadPage() {
+		location.reload();
+	}
 
 	async function onCompleteHandler(e: Event): Promise<void> {
 		await fetch('/api/submit', {
@@ -57,6 +72,7 @@
 				tournamentLevel,
 				matchNumber,
 				teamStation,
+				teamNumber,
 
 				// Autonomous period step
 				autoStartingPosition,
@@ -80,19 +96,21 @@
 
 				// Extra information step
 				playedAsDefense,
-				driverSkills,
 				robotFailed,
 				comments,
 				droppedNotes,
 				speedRatingSelected
 			})
 		});
+
+		saveChoices();
+		reloadPage();
 	}
 </script>
 
 <div class="max-w-xl">
 	<Stepper on:complete={onCompleteHandler} stepTerm="">
-		<MatchSelectionStep bind:tournamentLevel bind:matchNumber bind:teamStation />
+		<MatchSelectionStep bind:tournamentLevel bind:matchNumber bind:teamStation bind:teamNumber />
 		<AutonomousPeriodStep
 			bind:autoStartingPosition
 			bind:autoLeftZone
@@ -113,6 +131,6 @@
 			bind:failedClimbing
 			bind:climbPosition
 		/>
-		<ExtraInformationStep bind:playedAsDefense bind:driverSkills bind:robotFailed bind:fouls />
+		<ExtraInformationStep bind:playedAsDefense bind:robotFailed bind:fouls />
 	</Stepper>
 </div>

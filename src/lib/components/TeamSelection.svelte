@@ -1,8 +1,20 @@
 <script lang="ts">
 	export let teamStation: string;
+	export let teamNumber: number;
 	export let teams: number[];
 
 	import { RadioGroup, RadioItem } from '@skeletonlabs/skeleton';
+
+	const STATION_TO_TEAM_MAPPING: Record<string, number> = {
+		Red1: 0,
+		Red2: 1,
+		Red3: 2,
+		Blue1: 3,
+		Blue2: 4,
+		Blue3: 5
+	};
+
+	$: teamNumber = teams[STATION_TO_TEAM_MAPPING[teamStation]];
 </script>
 
 <div class="inline-flex w-full justify-center">

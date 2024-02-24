@@ -14,6 +14,7 @@ export async function POST({ request }) {
 		tournamentLevel,
 		matchNumber,
 		teamStation,
+		teamNumber,
 
 		// Autonomous period step
 		autoStartingPosition,
@@ -37,7 +38,6 @@ export async function POST({ request }) {
 
 		// Extra information step
 		playedAsDefense,
-		driverSkills,
 		robotFailed,
 		comments,
 		droppedNotes,
@@ -50,7 +50,7 @@ export async function POST({ request }) {
 		userEmail,
 		tournamentLevel,
 		matchNumber,
-		0, // TODO: TEAM NUMBER!
+		teamNumber,
 		autoStartingPosition,
 		+autoLeftZone,
 		autoAmpNotes,
