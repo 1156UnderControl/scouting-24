@@ -1,10 +1,9 @@
 <script lang="ts">
 	export let teleopCoopertition = false;
-	export let canPickupNotesFromGround = false;
 	export let teleopAmpNotes = 0;
 	export let teleopSpeakerNotes = 0;
 	export let fouls = 0;
-	
+
 	import { Step } from '@skeletonlabs/skeleton';
 
 	import NumberInput from '$lib/components/NumberInput.svelte';
@@ -16,7 +15,6 @@
 	<section>
 		<div class="justify-items-left grid gap-3">
 			<Switch bind:checked={teleopCoopertition} label="Coopertition button pressed" />
-			<Switch bind:checked={canPickupNotesFromGround} label="Can pickup Notes from ground" />
 		</div>
 		<h3 class="h3 px-2">Scored notes:</h3>
 		<div class="grid grid-cols-2 justify-items-center gap-2 py-2">

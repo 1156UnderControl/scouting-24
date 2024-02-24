@@ -25,7 +25,6 @@ export async function POST({ request, params }) {
 
 		// Teleoperated period step
 		teleopCoopertition,
-		canPickupNotesFromGround,
 		teleopAmpNotes,
 		teleopSpeakerNotes,
 		fouls,
@@ -38,6 +37,7 @@ export async function POST({ request, params }) {
 		climbPosition,
 
 		// Extra information step
+		canPickupNotesFromGround,
 		playedAsDefense,
 		robotFailed,
 		comments,
