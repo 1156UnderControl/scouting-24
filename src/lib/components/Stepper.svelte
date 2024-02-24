@@ -46,7 +46,7 @@
 	let speedRating = 3;
 
 	function saveChoices() {
-		if (matchNumber < schedule.length) matchNumber += 1;
+		if (matchNumber < schedule?.length) matchNumber += 1;
 
 		settings.update((_) => {
 			return {
