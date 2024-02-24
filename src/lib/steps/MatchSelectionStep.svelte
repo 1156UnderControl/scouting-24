@@ -1,5 +1,5 @@
 <script lang="ts">
-	export let tournamentLevel: string = 'Qualification';
+	export let tournamentLevel: string = 'Qual';
 	export let matchNumber: number = 1;
 	export let teamStation: string = 'Red1';
 	export let teamNumber: number;
@@ -41,4 +41,12 @@
 	<svelte:fragment slot="header">Match selection</svelte:fragment>
 	<MatchSelection bind:tournamentLevel bind:matchNumber onChange={handleTournamentLevelChange} />
 	<TeamSelection bind:teamStation bind:teamNumber teams={currentMatchTeams} />
+	{#if tournamentLevel === 'Practice'}
+		<div class="">
+			<label>
+				Team number:
+				<input bind:value={teamNumber} class="input ml-2 w-20" title="Team number" type="text" />
+			</label>
+		</div>
+	{/if}
 </Step>
