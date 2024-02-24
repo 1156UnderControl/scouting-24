@@ -26,12 +26,9 @@
 		[];
 
 	async function handleTournamentLevelChange() {
-		const response = await fetch('/api/schedule', {
-			method: 'POST',
-			headers: {
-				'content-type': 'application/json'
-			},
-			body: JSON.stringify({ tournamentLevel })
+		const response = await fetch(`/api/schedule/2024/BRBR/${tournamentLevel}`, {
+			method: 'GET',
+			headers: { 'content-type': 'application/json' }
 		});
 
 		schedule = await response.json();

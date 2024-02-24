@@ -3,9 +3,9 @@ import { json } from '@sveltejs/kit';
 import GoogleSheet from '$lib/models/GoogleSheet';
 
 const GOOGLE_SHEET_ID = '1keZJh84RyPS4qYCuoDuOkOW9f966MeIEhinkI9PssSs';
-const GOOGLE_SHEET_WORKSHEET_TITLE = 'BRBR';
 
-export async function POST({ request }) {
+export async function POST({ request, params }) {
+	const { eventAbbreviation } = params;
 	const {
 		userName,
 		userEmail,
@@ -44,7 +44,7 @@ export async function POST({ request }) {
 		speedRating
 	} = await request.json();
 
-	const sheet = await GoogleSheet.create(GOOGLE_SHEET_ID, GOOGLE_SHEET_WORKSHEET_TITLE);
+	const sheet = await GoogleSheet.create(GOOGLE_SHEET_ID, eventAbbreviation);
 	sheet.addRow([
 		userName,
 		userEmail,

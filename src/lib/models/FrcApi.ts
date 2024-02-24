@@ -63,12 +63,16 @@ export default class FrcApi {
 		}
 	}
 
-	public static async fetchSchedule(tournamentLevel: string): Promise<ScheduleResponse[]> {
+	public static async fetchSchedule(
+		eventYear: number,
+		eventAbbreviation: string,
+		tournamentLevel: string
+	): Promise<ScheduleResponse[]> {
 		const response = await FrcApi.fetchFromFrcApi({
 			endpoint: 'schedule',
 			queryParams: { tournamentLevel },
-			eventAbbreviation: 'BRBR',
-			eventYear: 2023
+			eventAbbreviation,
+			eventYear
 		});
 
 		const schedule = (response as ScheduleApiResponse)?.Schedule?.map((entity) => {
