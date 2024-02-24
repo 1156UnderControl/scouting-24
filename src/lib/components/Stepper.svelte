@@ -5,6 +5,7 @@
 	import { Stepper } from '@skeletonlabs/skeleton';
 	import { get } from 'svelte/store';
 
+	import type { ScheduleResponse } from '$lib/models/FrcApi';
 	import { settings } from '$lib/models/LocalStorage';
 	import AutonomousPeriodStep from '$lib/steps/AutonomousPeriodStep.svelte';
 	import EndgameStep from '$lib/steps/EndgameStep.svelte';
@@ -15,6 +16,7 @@
 	// Match selection step
 	let { tournamentLevel, matchNumber, teamStation } = get(settings);
 	let teamNumber: number;
+	let schedule: ScheduleResponse[];
 
 	// Autonomous period step
 	let autoStartingPosition = 'amp';
@@ -34,17 +36,18 @@
 	let trapNote = false;
 	let attemptedClimbing = false;
 	let failedClimbing = false;
-	let climbPosition = 'Center';
+	let climbPosition = '';
 
 	// Extra information step
 	let playedAsDefense = false;
 	let robotFailed = false;
 	let comments = '';
 	let droppedNotes = false;
-	let speedRatingSelected = '3';
+	let speedRating = 3;
 
 	function saveChoices() {
-		matchNumber += 1;
+		if (matchNumber < schedule.length) matchNumber += 1;
+
 		settings.update((_) => {
 			return {
 				tournamentLevel,
@@ -99,7 +102,7 @@
 				robotFailed,
 				comments,
 				droppedNotes,
-				speedRatingSelected
+				speedRating
 			})
 		});
 
@@ -110,7 +113,13 @@
 
 <div class="max-w-xl">
 	<Stepper on:complete={onCompleteHandler} stepTerm="">
-		<MatchSelectionStep bind:tournamentLevel bind:matchNumber bind:teamStation bind:teamNumber />
+		<MatchSelectionStep
+			bind:tournamentLevel
+			bind:matchNumber
+			bind:teamStation
+			bind:teamNumber
+			bind:schedule
+		/>
 		<AutonomousPeriodStep
 			bind:autoStartingPosition
 			bind:autoLeftZone
@@ -131,6 +140,13 @@
 			bind:failedClimbing
 			bind:climbPosition
 		/>
-		<ExtraInformationStep bind:playedAsDefense bind:robotFailed bind:fouls />
+		<ExtraInformationStep
+			bind:playedAsDefense
+			bind:robotFailed
+			bind:fouls
+			bind:droppedNotes
+			bind:comments
+			bind:speedRating
+		/>
 	</Stepper>
 </div>

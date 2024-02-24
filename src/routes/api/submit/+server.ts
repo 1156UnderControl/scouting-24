@@ -41,7 +41,7 @@ export async function POST({ request }) {
 		robotFailed,
 		comments,
 		droppedNotes,
-		speedRatingSelected
+		speedRating
 	} = await request.json();
 
 	const sheet = await GoogleSheet.create(GOOGLE_SHEET_ID, GOOGLE_SHEET_WORKSHEET_TITLE);
@@ -68,7 +68,7 @@ export async function POST({ request }) {
 		fouls,
 		+playedAsDefense,
 		+robotFailed,
-		+speedRatingSelected,
+		+speedRating,
 		comments
 	]);
 

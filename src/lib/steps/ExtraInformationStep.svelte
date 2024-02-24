@@ -3,15 +3,15 @@
 	export let robotFailed = false;
 	export let comments = '';
 	export let droppedNotes = false;
-	export let speedRatingSelected = '3';
+	export let speedRating = 3;
 	export let fouls = 0;
 
 	let speedOptions = [
-		{ value: '1', label: '1' },
-		{ value: '2', label: '2' },
-		{ value: '3', label: '3' },
-		{ value: '4', label: '4' },
-		{ value: '5', label: '5' }
+		{ value: 1, label: '1' },
+		{ value: 2, label: '2' },
+		{ value: 3, label: '3' },
+		{ value: 4, label: '4' },
+		{ value: 5, label: '5' }
 	];
 
 	import NumberInput from '$lib/components/NumberInput.svelte';
@@ -30,7 +30,7 @@
 		<Switch bind:checked={robotFailed} label="Robot failed" />
 		<Switch bind:checked={playedAsDefense} label="Played as defense" />
 		<Switch bind:checked={droppedNotes} label="Dropped more than 2 notes" />
-		<RadioGroup legend="Speed Rating" options={speedOptions} userSelected={speedRatingSelected} />
+		<RadioGroup label="Speed Rating" options={speedOptions} bind:selected={speedRating} />
 		<textarea bind:value={comments} class="textarea" rows="5" placeholder="Additional comments" />
 	</section>
 </Step>

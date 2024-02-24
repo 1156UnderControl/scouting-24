@@ -1,27 +1,24 @@
 <script lang="ts">
 	type Option = {
-		value: string;
+		value: string | number;
 		label: string;
 	};
 
 	export let options: Option[];
-	export let legend: string;
-	export let userSelected = options[0]?.value;
+	export let label: string;
+	export let selected = options[0]?.value;
 
 	import { RadioGroup, RadioItem } from '@skeletonlabs/skeleton';
 </script>
 
 <div class="flex items-center gap-2">
-	{#if legend}
-		<p>{legend}</p>
+	{#if label}
+		<p>{label}</p>
 	{/if}
 
 	<RadioGroup>
 		{#each options as { value, label }}
-			<RadioItem bind:group={userSelected} name="justify" value={value}>{label}</RadioItem>
+			<RadioItem bind:group={selected} name="justify" {value}>{label}</RadioItem>
 		{/each}
 	</RadioGroup>
 </div>
-
-
-

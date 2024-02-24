@@ -3,7 +3,7 @@
 	export let robotParked = false;
 	export let attemptedClimbing = false;
 	export let failedClimbing = false;
-	export let climbPosition = 'Center';
+	export let climbPosition = '';
 
 	let climbOptions = [
 		{ value: 'Left', label: 'Left' },
@@ -33,7 +33,7 @@
 			<Switch bind:checked={robotParked} label="Robot has parked on stage area" />
 		</div>
 		<div>
-			<Switch bind:checked={trapNote} label="Note in trap" />
+			<Switch bind:checked={trapNote} label="Scored note in trap" />
 		</div>
 		{#if !robotParked}
 			<div>
@@ -45,7 +45,7 @@
 			</div>
 			{#if attemptedClimbing}
 				<div class="pb-2">
-					<RadioGroup legend="Climb Region" options={climbOptions} userSelected={climbPosition} />
+					<RadioGroup label="Climb Region" options={climbOptions} bind:selected={climbPosition} />
 				</div>
 				<div>
 					<Switch bind:checked={failedClimbing} label="Robot has failed climbing" />

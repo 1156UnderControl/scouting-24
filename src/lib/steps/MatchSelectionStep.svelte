@@ -3,6 +3,7 @@
 	export let matchNumber: number = 1;
 	export let teamStation: string = 'Red1';
 	export let teamNumber: number;
+	export let schedule: ScheduleResponse[];
 
 	import { Step } from '@skeletonlabs/skeleton';
 
@@ -10,7 +11,6 @@
 	import TeamSelection from '$lib/components/TeamSelection.svelte';
 	import type { ScheduleResponse } from '$lib/models/FrcApi';
 
-	let schedule: ScheduleResponse[];
 	let currentMatchTeams: number[] = [];
 
 	$: currentMatchTeams =
