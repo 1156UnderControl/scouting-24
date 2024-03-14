@@ -1,4 +1,5 @@
 <script lang="ts">
+	export let eventAbbreviation: string;
 	export let tournamentLevel: string = 'Qual';
 	export let matchNumber: number = 1;
 	export let teamStation: string = 'Red1';
@@ -26,7 +27,7 @@
 		[];
 
 	async function handleTournamentLevelChange() {
-		const response = await fetch(`/api/schedule/2024/BRBR/${tournamentLevel}`, {
+		const response = await fetch(`/api/schedule/2024/${eventAbbreviation}/${tournamentLevel}`, {
 			method: 'GET',
 			headers: { 'content-type': 'application/json' }
 		});

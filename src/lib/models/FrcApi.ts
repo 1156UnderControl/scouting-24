@@ -46,8 +46,8 @@ export default class FrcApi {
 	private static async fetchFromFrcApi({
 		endpoint,
 		queryParams = {},
-		eventYear = 2024,
-		eventAbbreviation = 'BRBR',
+		eventYear,
+		eventAbbreviation,
 		apiVersion = 'v3.0'
 	}: FrcApiFetchParams): Promise<any> {
 		const queryString = new URLSearchParams(queryParams).toString();

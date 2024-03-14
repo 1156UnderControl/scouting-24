@@ -1,6 +1,7 @@
 <script lang="ts">
 	export let userName: string;
 	export let userEmail: string;
+	export let eventAbbreviation: string;
 
 	import { Stepper } from '@skeletonlabs/skeleton';
 	import { get } from 'svelte/store';
@@ -62,7 +63,7 @@
 	}
 
 	async function onCompleteHandler(e: Event): Promise<void> {
-		await fetch('/scout/2024/BRBR', {
+		await fetch(`/scout/2024/${eventAbbreviation}`, {
 			method: 'POST',
 			headers: {
 				'content-type': 'application/json'
@@ -119,6 +120,7 @@
 			bind:teamStation
 			bind:teamNumber
 			bind:schedule
+			bind:eventAbbreviation
 		/>
 		<AutonomousPeriodStep
 			bind:autoStartingPosition
