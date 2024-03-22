@@ -32,6 +32,10 @@ export default class GoogleSheet {
 	};
 
 	public async addRow(data: any) {
-		await this.sheet.addRow(data);
+		try {
+			await this.sheet.addRow(data);
+		} catch (e: unknown) {
+			throw new Error(`Error adding row to Google Sheets: ${(e as Error).message}`);
+		}
 	}
 }
