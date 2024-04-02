@@ -2,6 +2,7 @@
 	export let teleopCoopertition = false;
 	export let teleopAmpNotes = 0;
 	export let teleopSpeakerNotes = 0;
+	export let passes = 0;
 	export let fouls = 0;
 
 	import { Step } from '@skeletonlabs/skeleton';
@@ -27,7 +28,15 @@
 				<NumberInput bind:value={teleopSpeakerNotes} min={0} max={15} />
 			</div>
 		</div>
-		<h3 class="h3 px-2">Fouls:</h3>
-		<NumberInput bind:value={fouls} min={0} max={15} />
+		<div class="grid grid-cols-2 justify-items-center gap-2 py-2">
+			<div>
+				<p class="h3 px-2">Passes:</p>
+				<NumberInput bind:value={passes} min={0} max={15} />
+			</div>
+			<div>
+				<p class="h3 px-2">Fouls:</p>
+				<NumberInput bind:value={fouls} min={0} max={15} />
+			</div>
+		</div>
 	</section>
 </Step>
