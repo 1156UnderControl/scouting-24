@@ -27,6 +27,7 @@ export async function POST({ request, params }) {
 		teleopCoopertition,
 		teleopAmpNotes,
 		teleopSpeakerNotes,
+		passes,
 		fouls,
 
 		// Endgame step
@@ -60,6 +61,7 @@ export async function POST({ request, params }) {
 		+canPickupNotesFromGround,
 		teleopAmpNotes,
 		teleopSpeakerNotes,
+		passes,
 		+robotParked,
 		+attemptedClimbing,
 		climbPosition,
