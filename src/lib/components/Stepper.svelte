@@ -89,7 +89,7 @@
 				teleopCoopertition,
 				teleopAmpNotes,
 				teleopSpeakerNotes,
-				passes;
+				passes,
 				fouls,
 
 				// Endgame step
