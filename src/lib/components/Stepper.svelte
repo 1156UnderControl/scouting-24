@@ -30,6 +30,7 @@
 	let canPickupNotesFromGround = false;
 	let teleopAmpNotes = 0;
 	let teleopSpeakerNotes = 0;
+	let passes = 0;
 	let fouls = 0;
 
 	// Endgame step
@@ -88,6 +89,7 @@
 				teleopCoopertition,
 				teleopAmpNotes,
 				teleopSpeakerNotes,
+				passes,
 				fouls,
 
 				// Endgame step
@@ -132,6 +134,7 @@
 			bind:teleopCoopertition
 			bind:teleopAmpNotes
 			bind:teleopSpeakerNotes
+			bind:passes
 			bind:fouls
 		/>
 		<EndgameStep
