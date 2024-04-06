@@ -55,8 +55,6 @@ export async function POST({ request, params }) {
 		+autoLeftZone,
 		autoAmpNotes,
 		autoSpeakerNotes,
-		+teleopCoopertition,
-		+canPickupNotesFromGround,
 		teleopAmpNotes,
 		teleopSpeakerNotes,
 		passes,
