@@ -14,9 +14,6 @@
 <Step>
 	<svelte:fragment slot="header">Teleoperated period</svelte:fragment>
 	<section>
-		<div class="justify-items-left grid gap-3">
-			<Switch bind:checked={teleopCoopertition} label="Coopertition button pressed" />
-		</div>
 		<h3 class="h3 px-2">Scored notes:</h3>
 		<div class="grid grid-cols-2 justify-items-center gap-2 py-2">
 			<div>
@@ -30,11 +27,11 @@
 		</div>
 		<div class="grid grid-cols-2 justify-items-center gap-2 py-2">
 			<div>
-				<p class="h3 px-2">Passes:</p>
+				<p class="px-2">Passes:</p>
 				<NumberInput bind:value={passes} min={0} max={35} />
 			</div>
 			<div>
-				<p class="h3 px-2">Fouls:</p>
+				<p class="px-2">Fouls:</p>
 				<NumberInput bind:value={fouls} min={0} max={15} />
 			</div>
 		</div>

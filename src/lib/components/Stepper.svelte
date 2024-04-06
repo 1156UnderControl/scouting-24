@@ -26,8 +26,6 @@
 	let autoSpeakerNotes = 0;
 
 	// Teleoperated period step
-	let teleopCoopertition = false;
-	let canPickupNotesFromGround = false;
 	let teleopAmpNotes = 0;
 	let teleopSpeakerNotes = 0;
 	let passes = 0;
@@ -86,7 +84,6 @@
 				autoSpeakerNotes,
 
 				// Teleoperated period step
-				teleopCoopertition,
 				teleopAmpNotes,
 				teleopSpeakerNotes,
 				passes,
@@ -100,7 +97,6 @@
 				climbPosition,
 
 				// Extra information step
-				canPickupNotesFromGround,
 				playedAsDefense,
 				robotFailed,
 				comments,
@@ -131,7 +127,6 @@
 			bind:autoSpeakerNotes
 		/>
 		<TeleoperatedPeriodStep
-			bind:teleopCoopertition
 			bind:teleopAmpNotes
 			bind:teleopSpeakerNotes
 			bind:passes
@@ -145,7 +140,6 @@
 			bind:climbPosition
 		/>
 		<ExtraInformationStep
-			bind:canPickupNotesFromGround
 			bind:playedAsDefense
 			bind:robotFailed
 			bind:fouls
