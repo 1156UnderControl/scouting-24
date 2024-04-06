@@ -27,11 +27,11 @@
 		</div>
 		<div class="grid grid-cols-2 justify-items-center gap-2 py-2">
 			<div>
-				<p class="px-2">Passes:</p>
+				<p class="px-2">👨‍🍳 Passes:</p>
 				<NumberInput bind:value={passes} min={0} max={35} />
 			</div>
 			<div>
-				<p class="px-2">Fouls:</p>
+				<p class="px-2">🚨 Fouls:</p>
 				<NumberInput bind:value={fouls} min={0} max={15} />
 			</div>
 		</div>
