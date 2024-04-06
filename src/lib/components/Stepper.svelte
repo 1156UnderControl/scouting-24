@@ -84,7 +84,6 @@
 				autoSpeakerNotes,
 
 				// Teleoperated period step
-				teleopCoopertition,
 				teleopAmpNotes,
 				teleopSpeakerNotes,
 				passes,
@@ -98,7 +97,6 @@
 				climbPosition,
 
 				// Extra information step
-				canPickupNotesFromGround,
 				playedAsDefense,
 				robotFailed,
 				comments,
@@ -129,7 +127,6 @@
 			bind:autoSpeakerNotes
 		/>
 		<TeleoperatedPeriodStep
-			bind:teleopCoopertition
 			bind:teleopAmpNotes
 			bind:teleopSpeakerNotes
 			bind:passes
@@ -143,7 +140,6 @@
 			bind:climbPosition
 		/>
 		<ExtraInformationStep
-			bind:canPickupNotesFromGround
 			bind:playedAsDefense
 			bind:robotFailed
 			bind:fouls
