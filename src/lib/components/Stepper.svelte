@@ -26,8 +26,6 @@
 	let autoSpeakerNotes = 0;
 
 	// Teleoperated period step
-	let teleopCoopertition = false;
-	let canPickupNotesFromGround = false;
 	let teleopAmpNotes = 0;
 	let teleopSpeakerNotes = 0;
 	let passes = 0;

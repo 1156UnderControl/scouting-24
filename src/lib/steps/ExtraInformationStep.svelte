@@ -1,5 +1,4 @@
 <script lang="ts">
-	export let canPickupNotesFromGround = false;
 	export let playedAsDefense = false;
 	export let robotFailed = false;
 	export let comments = '';
@@ -28,7 +27,6 @@
 		<NumberInput bind:value={fouls} min={0} max={15} />
 	</div>
 	<section class="justify-items-left grid gap-3">
-		<Switch bind:checked={canPickupNotesFromGround} label="Can pickup notes from ground" />
 		<Switch bind:checked={robotFailed} label="Robot failed/broke" />
 		<Switch bind:checked={playedAsDefense} label="Played as defense" />
 		<Switch bind:checked={droppedNotes} label="Dropped more than 2 notes" />
