@@ -1,10 +1,9 @@
 <script lang="ts">
-	export let teleopCoopertition = false;
 	export let teleopAmpNotes = 0;
 	export let teleopSpeakerNotes = 0;
 	export let passes = 0;
 	export let fouls = 0;
-
+	
 	import { Step } from '@skeletonlabs/skeleton';
 
 	import NumberInput from '$lib/components/NumberInput.svelte';

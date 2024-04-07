@@ -1,8 +1,25 @@
 <script lang="ts">
 	export let autoStartingPosition = 'amp';
 	export let autoLeftZone = false;
-	export let autoAmpNotes = 0;
-	export let autoSpeakerNotes = 0;
+
+	export let scoredNotes = 0;
+	export let preloadNote = false;
+	export let note1 = false;
+	export let note2 = false;
+	export let note3 = false;
+	export let note4 = false;
+	export let note5 = false;
+	export let note6 = false;
+	export let note7 = false;
+	export let note8 = false;
+	export let totalNotes = scoredNotes;
+
+	for (let i = 1; i <= 8; i++) {
+  let note = eval(`note${i}`);
+  if (note) {
+    totalNotes++;
+  	}
+	}
 
 	import { RadioGroup, RadioItem, Step } from '@skeletonlabs/skeleton';
 
@@ -14,7 +31,7 @@
 	<svelte:fragment slot="header">Autonomous period</svelte:fragment>
 	<section>
 		<p>Robot started closer to:</p>
-		<div class="grid justify-items-center pb-4">
+		<div class="grid justify-items-center pb-2 gap-4">
 			<RadioGroup>
 				<RadioItem bind:group={autoStartingPosition} name="justify" value={'amp'}>🎚️ Amp</RadioItem>
 				<RadioItem bind:group={autoStartingPosition} name="justify" value={'speaker'}
@@ -27,18 +44,28 @@
 					>⛲ Source</RadioItem
 				>
 			</RadioGroup>
-		</div>
-		<Switch bind:checked={autoLeftZone} label="Robot left starting area completely" />
-		<h3 class="h3 pt-2">Notes:</h3>
-		<div class="grid grid-cols-2 justify-items-center gap-2 py-2">
-			<div>
-				<p class="pb-2">🎚️ Amp:</p>
-				<NumberInput bind:value={autoAmpNotes} min={0} max={7} />
-			</div>
-			<div>
-				<p class="pb-2">🔊 Speaker:</p>
-				<NumberInput bind:value={autoSpeakerNotes} min={0} max={7} />
+			<Switch bind:checked={autoLeftZone} label="Robot left starting area completely" />
+			<Switch bind:checked={preloadNote} label="Robot scored preload note" />
+			<div class="alignitems-center flex justify-items-center gap-3 text-center">
+				<h4 class="px-2">Scored notes (without preload):</h4>
+				<NumberInput bind:value={scoredNotes} min={0} max={10} />
 			</div>
 		</div>
+		<h2 class="pt-2">Collected notes:</h2>
+		<div class="flex flex-row justify-center">
+			<div class="flex flex-col">
+					<div><input type="checkbox" class="w-10 h-10" bind:checked={note1} /></div>
+					<div><input type="checkbox" class="w-10 h-10" bind:checked={note2} /></div>
+					<div><input type="checkbox" class="w-10 h-10" bind:checked={note3} /></div>
+					<div><input type="checkbox" class="w-10 h-10" bind:checked={note4} /></div>
+					<div><input type="checkbox" class="w-10 h-10" bind:checked={note5} /></div>
+			</div>
+			<div style="width: 20px;"></div>
+			<div class="flex flex-col mt-5">
+					<div><input type="checkbox" class="w-10 h-10" bind:checked={note6} /></div>
+					<div><input type="checkbox" class="w-10 h-10" bind:checked={note7} /></div>
+					<div><input type="checkbox" class="w-10 h-10" bind:checked={note8} /></div>
+			</div>
+	</div>
 	</section>
 </Step>
