@@ -22,7 +22,6 @@
 	// Autonomous period step
 	let autoStartingPosition = 'amp';
 	let autoLeftZone = false;
-	let scoredNotes = 0;
 	let preloadNote = false;
 	let note1 = false;
 	let note2 = false;
@@ -89,7 +88,6 @@
 				// Autonomous period step
 				autoStartingPosition,
 				autoLeftZone,
-				scoredNotes,
 				preloadNote,
 				note1,
 				note2,
@@ -141,7 +139,6 @@
 		<AutonomousPeriodStep
 			bind:autoStartingPosition
 			bind:autoLeftZone
-			bind:scoredNotes
 			bind:preloadNote
 			bind:note1
 			bind:note2
