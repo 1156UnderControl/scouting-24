@@ -2,7 +2,6 @@
 	export let autoStartingPosition = 'amp';
 	export let autoLeftZone = false;
 
-	export let scoredNotes = 0;
 	export let preloadNote = false;
 	export let note1 = false;
 	export let note2 = false;
