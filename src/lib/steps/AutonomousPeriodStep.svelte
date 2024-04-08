@@ -49,10 +49,6 @@
 			</RadioGroup>
 			<Switch bind:checked={autoLeftZone} label="Robot left starting area completely" />
 			<Switch bind:checked={preloadNote} label="Robot scored preload note" />
-			<div class="alignitems-center flex justify-items-center gap-3 text-center">
-				<h4 class="px-2">Scored notes (without preload):</h4>
-				<NumberInput bind:value={scoredNotes} min={0} max={10} />
-			</div>
 		</div>
 		<h2 class="pt-2">Collected notes:</h2>
 		<div class="flex flex-row justify-center">
