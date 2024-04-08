@@ -15,14 +15,15 @@
 	export let totalNotes = 0;
 
 	for (let i = 1; i <= 8; i++) {
-  let note = eval(`note${i}`);
-  if (note) {
-    totalNotes++;
-  }
-  if (preloadNote) {
-    totalNotes++;
-  }
-}
+ 		let note = eval(`note${i}`);
+  		if (note) {
+    			totalNotes++;
+		}	
+  	}
+  	if (preloadNote) {
+    		totalNotes++;
+  		}
+	}
 
 	import { RadioGroup, RadioItem, Step } from '@skeletonlabs/skeleton';
 
