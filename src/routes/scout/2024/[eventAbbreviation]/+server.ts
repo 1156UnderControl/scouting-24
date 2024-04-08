@@ -20,7 +20,6 @@ export async function POST({ request, params }) {
 		// Autonomous period step
 		autoStartingPosition,
 		autoLeftZone,
-		scoredNotes,
 		preloadNote,
 		note1,
 		note2,
@@ -76,7 +75,6 @@ export async function POST({ request, params }) {
 		+robotFailed,
 		+speedRating,
 		comments,
-		scoredNotes,
 		+preloadNote,
 		+note1,
 		+note2,
