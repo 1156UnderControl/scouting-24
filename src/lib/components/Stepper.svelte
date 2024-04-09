@@ -31,7 +31,6 @@
 	let note6 = false;
 	let note7 = false;
 	let note8 = false;
-	let totalNotes = 0;
 
 	// Teleoperated period step
 	let teleopAmpNotes = 0;
@@ -97,7 +96,6 @@
 				note6,
 				note7,
 				note8,
-				totalNotes,
 
 				// Teleoperated period step
 				teleopAmpNotes,
@@ -148,7 +146,6 @@
 			bind:note6
 			bind:note7
 			bind:note8
-			bind:totalNotes
 		/>
 		<TeleoperatedPeriodStep
 			bind:teleopAmpNotes
