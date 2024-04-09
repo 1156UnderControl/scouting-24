@@ -11,19 +11,6 @@
 	export let note6 = false;
 	export let note7 = false;
 	export let note8 = false;
-	let totalNotes = 0;
-
-	for (let i = 1; i <= 8; i++) {
- 		let note = eval(`note${i}`);
-  		if (note) {
-    			totalNotes++;
-		}	
-  	}
-  	if (preloadNote) {
-    		totalNotes++;
-  	}
-	
-	export totalNotes;
 
 	import { RadioGroup, RadioItem, Step } from '@skeletonlabs/skeleton';
 
