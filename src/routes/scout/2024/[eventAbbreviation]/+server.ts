@@ -29,7 +29,6 @@ export async function POST({ request, params }) {
 		note6,
 		note7,
 		note8,
-		totalNotes,
 
 		// Teleoperated period step
 		teleopAmpNotes,
@@ -84,7 +83,6 @@ export async function POST({ request, params }) {
 		+note6,
 		+note7,
 		+note8,
-		totalNotes,
 	]);
 
 	return json({});
