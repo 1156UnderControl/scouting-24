@@ -21,8 +21,8 @@
   	}
   	if (preloadNote) {
     		totalNotes++;
-  		}
-	}
+  	}
+	
 
 	import { RadioGroup, RadioItem, Step } from '@skeletonlabs/skeleton';
 
