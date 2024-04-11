@@ -37,17 +37,19 @@
 		<Switch bind:checked={droppedNotes} label="Dropped more than 2 notes" />
 		<RadioGroup label="Speed Rating" options={speedOptions} bind:selected={speedRating} />
 		<div>
-			<h3>Teste:</h3>
-			<input type="checkbox" class="w-10 h-10" bind:checked={hybrid} />
-		</div>
-		<div>
-			<input type="checkbox" class="w-10 h-10" bind:checked={speaker} />
-		</div>
-		<div>
-			<input type="checkbox" class="w-10 h-10" bind:checked={feeder} />
-		</div>
-		<div>
-			<input type="checkbox" class="w-10 h-10" bind:checked={defender} />
+			<div class="justify-items-left grid gap-3">
+				<h3>Teste:</h3>
+				<input type="checkbox" class="w-10 h-10" bind:checked={hybrid} />
+			</div>
+			<div>
+				<input type="checkbox" class="w-10 h-10" bind:checked={speaker} />
+			</div>
+			<div>
+				<input type="checkbox" class="w-10 h-10" bind:checked={feeder} />
+			</div>
+			<div>
+				<input type="checkbox" class="w-10 h-10" bind:checked={defender} />
+			</div>
 		</div>
 		<textarea bind:value={comments} class="textarea" rows="5" placeholder="Additional comments" />
 	</section>
