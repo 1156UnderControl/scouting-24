@@ -36,10 +36,11 @@
 		<Switch bind:checked={playedAsDefense} label="Played as defense" />
 		<Switch bind:checked={droppedNotes} label="Dropped more than 2 notes" />
 		<RadioGroup label="Speed Rating" options={speedOptions} bind:selected={speedRating} />
-		<Switch bind:checked={hybrid} label="Can play well as Hybrid" />
-		<Switch bind:checked={speaker} label="Can play well as Speaker" />
-		<Switch bind:checked={feeder} label="Can play well as Feeder" />
-		<Switch bind:checked={defender} label="Can play well as Defender" />
+		<h3>Can plays well as:</h3>
+		<Switch bind:checked={hybrid} label="Hybrid" />
+		<Switch bind:checked={speaker} label="Speaker" />
+		<Switch bind:checked={feeder} label="Feeder" />
+		<Switch bind:checked={defender} label="Defender" />
 		<textarea bind:value={comments} class="textarea" rows="5" placeholder="Additional comments" />
 	</section>
 </Step>
