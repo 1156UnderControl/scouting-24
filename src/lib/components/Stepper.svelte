@@ -22,8 +22,15 @@
 	// Autonomous period step
 	let autoStartingPosition = 'amp';
 	let autoLeftZone = false;
-	let autoAmpNotes = 0;
-	let autoSpeakerNotes = 0;
+	let preloadNote = false;
+	let note1 = false;
+	let note2 = false;
+	let note3 = false;
+	let note4 = false;
+	let note5 = false;
+	let note6 = false;
+	let note7 = false;
+	let note8 = false;
 
 	// Teleoperated period step
 	let teleopAmpNotes = 0;
@@ -80,8 +87,15 @@
 				// Autonomous period step
 				autoStartingPosition,
 				autoLeftZone,
-				autoAmpNotes,
-				autoSpeakerNotes,
+				preloadNote,
+				note1,
+				note2,
+				note3,
+				note4,
+				note5,
+				note6,
+				note7,
+				note8,
 
 				// Teleoperated period step
 				teleopAmpNotes,
@@ -123,8 +137,15 @@
 		<AutonomousPeriodStep
 			bind:autoStartingPosition
 			bind:autoLeftZone
-			bind:autoAmpNotes
-			bind:autoSpeakerNotes
+			bind:preloadNote
+			bind:note1
+			bind:note2
+			bind:note3
+			bind:note4
+			bind:note5
+			bind:note6
+			bind:note7
+			bind:note8
 		/>
 		<TeleoperatedPeriodStep
 			bind:teleopAmpNotes

@@ -20,8 +20,15 @@ export async function POST({ request, params }) {
 		// Autonomous period step
 		autoStartingPosition,
 		autoLeftZone,
-		autoAmpNotes,
-		autoSpeakerNotes,
+		preloadNote,
+		note1,
+		note2,
+		note3,
+		note4,
+		note5,
+		note6,
+		note7,
+		note8,
 
 		// Teleoperated period step
 		teleopAmpNotes,
@@ -53,10 +60,6 @@ export async function POST({ request, params }) {
 		teamNumber,
 		autoStartingPosition,
 		+autoLeftZone,
-		autoAmpNotes,
-		autoSpeakerNotes,
-		+teleopCoopertition,
-		+canPickupNotesFromGround,
 		teleopAmpNotes,
 		teleopSpeakerNotes,
 		passes,
@@ -70,7 +73,16 @@ export async function POST({ request, params }) {
 		+playedAsDefense,
 		+robotFailed,
 		+speedRating,
-		comments
+		comments,
+		+preloadNote,
+		+note1,
+		+note2,
+		+note3,
+		+note4,
+		+note5,
+		+note6,
+		+note7,
+		+note8,
 	]);
 
 	return json({});
