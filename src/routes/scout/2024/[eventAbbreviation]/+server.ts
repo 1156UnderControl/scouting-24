@@ -48,7 +48,13 @@ export async function POST({ request, params }) {
 		robotFailed,
 		comments,
 		droppedNotes,
-		speedRating
+		speedRating,
+		speaker,
+		amplifier,
+		hybrid,
+		feeder,
+		defender
+
 	} = await request.json();
 
 	const sheet = await GoogleSheet.create(GOOGLE_SHEET_ID, eventAbbreviation);
@@ -83,6 +89,11 @@ export async function POST({ request, params }) {
 		+note6,
 		+note7,
 		+note8,
+		+speaker,
+		+amplifier,
+		+hybrid,
+		+feeder,
+		+defender,
 	]);
 
 	return json({});

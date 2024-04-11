@@ -2,5 +2,5 @@
 </script>
 
 <section class="flex justify-center">
-	<a href="/scout/2024/IACF">2024 Iowa Regional</a>
+	<a href="/scout/2024/NEWTON">2024 Newton Division</a>
 </section>
