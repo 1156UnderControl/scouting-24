@@ -1,7 +1,6 @@
 <script lang="ts">
 	export let autoStartingPosition = 'amp';
 	export let autoLeftZone = false;
-
 	export let preloadNote = false;
 	export let note1 = false;
 	export let note2 = false;
@@ -14,7 +13,6 @@
 
 	import { RadioGroup, RadioItem, Step } from '@skeletonlabs/skeleton';
 
-	import NumberInput from '$lib/components/NumberInput.svelte';
 	import Switch from '$lib/components/Switch.svelte';
 </script>
 
@@ -31,14 +29,11 @@
 				<RadioItem bind:group={autoStartingPosition} name="justify" value={'podium'}
 					>🥇 Podium</RadioItem
 				>
-				<RadioItem bind:group={autoStartingPosition} name="justify" value={'source'}
-					>⛲ Source</RadioItem
-				>
 			</RadioGroup>
 			<Switch bind:checked={autoLeftZone} label="Robot left starting area completely" />
 			<Switch bind:checked={preloadNote} label="Robot scored preload note" />
 		</div>
-		<h2 class="pt-2">Collected notes:</h2>
+		<h2 class="pt-2 font-bold">Scored notes:</h2>
 		<div class="flex flex-row justify-center">
 			<div class="flex flex-col">
 					<div><input type="checkbox" class="w-10 h-10" bind:checked={note1} /></div>
@@ -53,6 +48,6 @@
 					<div><input type="checkbox" class="w-10 h-10" bind:checked={note7} /></div>
 					<div><input type="checkbox" class="w-10 h-10" bind:checked={note8} /></div>
 			</div>
-	</div>
+		</div>
 	</section>
 </Step>

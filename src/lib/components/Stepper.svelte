@@ -51,6 +51,11 @@
 	let comments = '';
 	let droppedNotes = false;
 	let speedRating = 3;
+	let speaker = false;
+	let amplifier = false;
+	let hybrid = false;
+	let feeder = false;
+	let defender = false;
 
 	function saveChoices() {
 		if (matchNumber < schedule?.length) matchNumber += 1;
@@ -115,7 +120,12 @@
 				robotFailed,
 				comments,
 				droppedNotes,
-				speedRating
+				speedRating,
+				speaker,
+				amplifier,
+				hybrid,
+				feeder,
+				defender,
 			})
 		});
 
@@ -167,6 +177,11 @@
 			bind:droppedNotes
 			bind:comments
 			bind:speedRating
+			bind:speaker
+			bind:amplifier
+			bind:hybrid
+			bind:feeder
+			bind:defender
 		/>
 	</Stepper>
 </div>
