@@ -33,7 +33,7 @@
 			<Switch bind:checked={autoLeftZone} label="Robot left starting area completely" />
 			<Switch bind:checked={preloadNote} label="Robot scored preload note" />
 		</div>
-		<h2 class="pt-2">Collected notes:</h2>
+		<h2 class="pt-2 font-bold">Collected notes:</h2>
 		<div class="flex flex-row justify-center">
 			<div class="flex flex-col">
 					<div><input type="checkbox" class="w-10 h-10" bind:checked={note1} /></div>
