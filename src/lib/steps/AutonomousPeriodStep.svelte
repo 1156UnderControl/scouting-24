@@ -1,7 +1,6 @@
 <script lang="ts">
 	export let autoStartingPosition = 'amp';
 	export let autoLeftZone = false;
-
 	export let preloadNote = false;
 	export let note1 = false;
 	export let note2 = false;
@@ -14,7 +13,6 @@
 
 	import { RadioGroup, RadioItem, Step } from '@skeletonlabs/skeleton';
 
-	import NumberInput from '$lib/components/NumberInput.svelte';
 	import Switch from '$lib/components/Switch.svelte';
 </script>
 
@@ -53,6 +51,6 @@
 					<div><input type="checkbox" class="w-10 h-10" bind:checked={note7} /></div>
 					<div><input type="checkbox" class="w-10 h-10" bind:checked={note8} /></div>
 			</div>
-	</div>
+		</div>
 	</section>
 </Step>
