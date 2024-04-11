@@ -5,9 +5,9 @@
 	export let droppedNotes = false;
 	export let speedRating = 3;
 	export let fouls = 0;
-
-	export let hybrid = false;
 	export let speaker = false;
+	export let amplifier = false;
+	export let hybrid = false;
 	export let feeder = false;
 	export let defender = false;
 
@@ -36,9 +36,10 @@
 		<Switch bind:checked={playedAsDefense} label="Played as defense" />
 		<Switch bind:checked={droppedNotes} label="Dropped more than 2 notes" />
 		<RadioGroup label="Speed Rating" options={speedOptions} bind:selected={speedRating} />
-		<h3>Can plays well as:</h3>
-		<Switch bind:checked={hybrid} label="Hybrid" />
+		<h3 class="font-bold">Can play well as:</h3>
 		<Switch bind:checked={speaker} label="Speaker" />
+		<Switch bind:checked={amplifier} label="Amplifier" />
+		<Switch bind:checked={hybrid} label="Hybrid (Amp+Speaker)" />
 		<Switch bind:checked={feeder} label="Feeder" />
 		<Switch bind:checked={defender} label="Defender" />
 		<textarea bind:value={comments} class="textarea" rows="5" placeholder="Additional comments" />
