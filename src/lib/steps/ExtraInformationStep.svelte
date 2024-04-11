@@ -37,19 +37,10 @@
 		<Switch bind:checked={droppedNotes} label="Dropped more than 2 notes" />
 		<RadioGroup label="Speed Rating" options={speedOptions} bind:selected={speedRating} />
 		<div class="justify-items-left">
-			<div class="flex flex-row">
-				<input type="checkbox" class="w-10 h-10" bind:checked={hybrid} />
-				<p>Teste</p>
-			</div>
-			<div>
-				<input type="checkbox" class="w-10 h-10" bind:checked={speaker} />
-			</div>
-			<div>
-				<input type="checkbox" class="w-10 h-10" bind:checked={feeder} />
-			</div>
-			<div>
-				<input type="checkbox" class="w-10 h-10" bind:checked={defender} />
-			</div>
+			<Switch bind:checked={hybrid} label="Can play well as Hybrid" />
+			<Switch bind:checked={speaker} label="Can play well as Speaker" />
+			<Switch bind:checked={feeder} label="Can play well as Feeder" />
+			<Switch bind:checked={defender} label="Can play well as Defender" />
 		</div>
 		<textarea bind:value={comments} class="textarea" rows="5" placeholder="Additional comments" />
 	</section>
