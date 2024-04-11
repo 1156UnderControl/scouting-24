@@ -36,10 +36,10 @@
 		<Switch bind:checked={playedAsDefense} label="Played as defense" />
 		<Switch bind:checked={droppedNotes} label="Dropped more than 2 notes" />
 		<RadioGroup label="Speed Rating" options={speedOptions} bind:selected={speedRating} />
-		<div>
-			<div class="justify-items-left grid gap-3">
-				<h3>Teste:</h3>
+		<div class="justify-items-left">
+			<div>
 				<input type="checkbox" class="w-10 h-10" bind:checked={hybrid} />
+				<p>Teste</p>
 			</div>
 			<div>
 				<input type="checkbox" class="w-10 h-10" bind:checked={speaker} />
