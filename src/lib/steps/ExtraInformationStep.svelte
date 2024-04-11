@@ -37,7 +37,7 @@
 		<Switch bind:checked={droppedNotes} label="Dropped more than 2 notes" />
 		<RadioGroup label="Speed Rating" options={speedOptions} bind:selected={speedRating} />
 		<div class="justify-items-left">
-			<div>
+			<div class="flex flex-row">
 				<input type="checkbox" class="w-10 h-10" bind:checked={hybrid} />
 				<p>Teste</p>
 			</div>
