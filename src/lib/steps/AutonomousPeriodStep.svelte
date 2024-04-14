@@ -26,8 +26,8 @@
 				<RadioItem bind:group={autoStartingPosition} name="justify" value={'speaker'}
 					>🔊 Speaker</RadioItem
 				>
-				<RadioItem bind:group={autoStartingPosition} name="justify" value={'podium'}
-					>🥇 Podium</RadioItem
+				<RadioItem bind:group={autoStartingPosition} name="justify" value={'source'}
+					>🥇 Source</RadioItem
 				>
 			</RadioGroup>
 			<Switch bind:checked={autoLeftZone} label="Robot left starting area completely" />
