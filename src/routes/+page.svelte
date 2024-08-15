@@ -2,6 +2,6 @@
 </script>
 
 <section class="flex justify-center">
-	<a href="/scout/2024/XXCUI">2024 Mato Grosso</a>
+	<a href="/scout/2024/2024cc">2024 Chezy Champs</a>
 </section>
 	
